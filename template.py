@@ -5,7 +5,9 @@ dirs=[
      os.path.join("data", "processed"),
      "notebook",
      "saved_models",
-     "src"]
+     "src",
+     "report",
+     "model_dir"]
 
 for dir in dirs:
     os.makedirs(dir,exist_ok=True)

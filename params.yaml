@@ -1,0 +1,31 @@
+base:
+  project: winequality-project
+  random_state: 42
+  target_col: quality
+    
+data_source:
+   s3_source: /home/shubham/MLOSP2practice/simple_app/data_given/winequality.csv
+   
+load_data:
+   raw_dataset_csv: /home/shubham/MLOSP2practice/simple_app/data/raw/winequality.csv
+   
+split_data:
+   train_path: /home/shubham/MLOSP2practice/simple_app/data/processed/train_winequality.csv
+   test_path: /home/shubham/MLOSP2practice/simple_app/data/processed/test_winequality.csv
+   test_size: 0.2
+
+estimators:
+  ElasticNet:
+    params:
+      # alpha: 0.88
+      # l1_ratio: 0.89
+      alpha: 0.9
+      l1_ratio: 0.4
+
+model_dir: /home/shubham/MLOSP2practice/simple_app/saved_models
+
+reports:
+  params: /home/shubham/MLOSP2practice/simple_app/report/params.json
+  scores: /home/shubham/MLOSP2practice/simple_app/report/scores.json
+  
+webapp_model_dir: prediction_service/model/model.joblib
